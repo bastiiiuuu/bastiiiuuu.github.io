@@ -14,3 +14,48 @@
 .sefel-feature{margin-bottom:24px}.sefel-visual{background:radial-gradient(ellipse at center,#45335645,transparent 72%),#121016;padding:35px}.sefel-flow{width:85%}.flow-title,.mobile-flow>span,.iot-flow>span{display:block;font-size:.75rem;letter-spacing:.1em;color:#b8a0ce;margin-bottom:22px}.sefel-flow>div{border:1px solid #473452;padding:16px 20px;border-radius:8px;background:#201729;font-size:1rem;color:#ece3f5}.sefel-flow>div>span{display:block;font-size:.8125rem;color:#ac99bc;margin-top:5px}.sefel-flow>i,.mobile-flow>i,.iot-flow>i{display:block;width:1px;height:18px;margin-left:26px;background:#77538e}.mobile-visual,.iot-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse,#52396c38,transparent 80%),#141019;padding:28px}.mobile-flow,.iot-flow{width:90%}.mobile-flow strong,.iot-flow strong{display:block;padding:12px 16px;border:1px solid #49375b;border-radius:7px;background:#22182c;font-size:.9375rem;font-weight:500}.mobile-flow small,.iot-flow small{display:block;margin-top:16px;font-size:.75rem;color:#a798b5}.additional-projects{margin-top:24px}@media(max-width:760px){.sefel-visual{height:340px;padding:24px}.sefel-flow{width:100%}.mobile-visual,.iot-visual{height:260px}}
 
 .planned-architecture{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px;background:#141019;border:1px solid #3c2d48;border-radius:10px;margin:26px 0}.planned-architecture>*{padding:18px 12px;text-align:center;background:#251b30;border:1px solid #50385f;border-radius:6px;font-size:.875rem;line-height:1.5;color:#d6c4e5}.planned-architecture strong,.planned-architecture>span{grid-column:1/-1;font-weight:500}@media(max-width:600px){.planned-architecture{grid-template-columns:1fr;padding:16px}.planned-architecture>*{grid-column:1}}
+/* La portada prioriza el trabajo verificable y conserva el diseño de los casos de estudio. */
+.portfolio-home{background:radial-gradient(ellipse at 85% 5%,#45216c22,transparent 30%),#09090c}
+.portfolio-home .wrap{width:min(1240px,calc(100% - 80px))}
+.portfolio-home .site-header{height:80px;background:#09090ce8}
+.portfolio-home .hero{min-height:610px;padding-block:88px 76px;grid-template-columns:1.05fr 1fr;gap:64px;overflow:visible}
+.portfolio-home h1{font-size:clamp(3rem,4.8vw,4.7rem);letter-spacing:-.06em;line-height:1.06}
+.portfolio-home .hero-description{max-width:530px;font-size:1.0625rem}
+.portfolio-home .eyebrow{font-size:.8125rem;letter-spacing:.12em}
+.portfolio-home .hero-note{font-size:.875rem;color:#aaa1b7}
+.hero-showcase{min-width:0;padding:12px;border:1px solid #382b47;border-radius:16px;background:linear-gradient(145deg,#21172c88,#101015);box-shadow:0 30px 90px #0005}
+.showcase-main{display:block;border-radius:9px;overflow:hidden;background:#100c19}
+.showcase-main img{width:100%;aspect-ratio:1.6;object-fit:cover;object-position:top}
+.showcase-main>span{display:block;font-size:.75rem;letter-spacing:.12em;color:#be9fed;padding:25px 24px 10px}
+.showcase-main strong{display:block;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.45rem;padding:0 24px 25px}
+.showcase-caption{display:flex;justify-content:space-between;gap:16px;padding:18px 10px 6px;font-size:.8125rem;color:#ada2bc}
+.showcase-caption a{color:#decaff}
+.portfolio-home .section{padding-block:80px}
+.portfolio-home .featured{min-height:370px;margin-bottom:24px;grid-template-columns:1fr 1fr;border-radius:14px;background:#111015}
+.portfolio-home .featured h3{font-size:2.4rem;margin-block:14px}
+.portfolio-home .featured-copy{padding:38px}
+.portfolio-home .featured-copy>p{font-size:1rem;line-height:1.7}
+.portfolio-home .project-type{font-size:.8125rem;letter-spacing:.08em}
+.portfolio-home .project-links,.portfolio-home .text-link{font-size:.875rem}
+.portfolio-home .tags li{font-size:.8125rem}
+.portfolio-home .deskisiao-visual{padding:0;background:#0c0811}
+.portfolio-home .deskisiao-visual img{width:100%;height:100%;object-fit:cover;object-position:top;filter:none}
+.portfolio-home .visual-label{left:18px;bottom:16px;background:#0c0913e8;padding:8px 10px;color:#d1bddf;font-size:.6875rem;letter-spacing:.07em}
+.portfolio-home .sefel-visual{padding:28px;background:linear-gradient(145deg,#24212b,#17141d)}
+.portfolio-home .sefel-visual img{height:305px;width:auto;object-fit:contain;box-shadow:0 12px 40px #0006}
+.portfolio-home .project-card{transition:border-color .2s,transform .2s}
+.portfolio-home .project-card:hover{border-color:#72568e;transform:translateY(-3px)}
+.portfolio-home .card-visual{height:190px}
+.portfolio-home .card-copy{padding:28px}
+.portfolio-home .card-copy>p{font-size:1rem;min-height:0}
+.portfolio-home .skills-layout{gap:70px}
+.portfolio-home .skill-category{font-size:.875rem}
+.portfolio-home .skill-row p{font-size:.9375rem}
+.portfolio-home .contact-section{background:radial-gradient(ellipse at 80% 80%,#59347922,transparent 65%)}
+.case-content figure{margin:30px 0;padding:24px;background:#19161e;border-radius:12px}
+.case-content figure img{max-height:650px;width:auto;margin:0 auto 20px;object-fit:contain}
+.case-content figcaption{font-size:.875rem;color:var(--muted);line-height:1.6}
+@media(min-width:1000px){.portfolio-home .projects>.featured:nth-of-type(2){grid-template-columns:1fr 1fr}.portfolio-home .projects>.featured:nth-of-type(2) .project-visual{order:2;border-right:0;border-left:1px solid var(--border)}}
+@media(max-width:1000px){.portfolio-home .wrap{width:calc(100% - 48px)}.portfolio-home .hero{gap:30px;min-height:0}.portfolio-home h1{font-size:3.15rem}.portfolio-home .featured-copy{padding:28px}.showcase-caption{flex-direction:column;gap:8px}}
+@media(max-width:760px){.portfolio-home .wrap{width:calc(100% - 40px)}.portfolio-home .hero{grid-template-columns:1fr;padding-block:52px;gap:35px}.portfolio-home h1{font-size:clamp(2.7rem,9vw,4rem)}.portfolio-home .hero-description{font-size:1rem}.hero-showcase{max-width:560px}.showcase-caption{flex-direction:row}.portfolio-home .featured{grid-template-columns:1fr}.portfolio-home .featured h3{font-size:2rem}.portfolio-home .section{padding-block:56px}.portfolio-home .project-visual{height:270px}.portfolio-home .sefel-visual img{height:235px}.portfolio-home .skills-layout{gap:32px}.portfolio-home .site-header{height:72px}.portfolio-home .card-visual{height:210px}}
+@media(prefers-reduced-motion:reduce){.portfolio-home .project-card:hover{transform:none}}
