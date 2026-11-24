@@ -7,3 +7,6 @@
 
 .hero-copy,.featured-copy,.card-copy{min-width:0}.hero{overflow:clip}.architecture-row>div{min-width:0}
 
+
+/* La identidad de Deskisiao se presenta como un recurso real del proyecto, sin simular una captura de pantalla */
+.deskisiao-feature{margin-bottom:24px}.deskisiao-visual{background:radial-gradient(ellipse at center,#53216c70,transparent 72%),#0d0912}.deskisiao-visual img{width:64%;height:310px;object-fit:contain;filter:drop-shadow(0 20px 45px #9741c92b)}.deskisiao-visual .visual-label{color:#b596ca}@media(max-width:760px){.deskisiao-visual img{height:240px;width:70%}}
