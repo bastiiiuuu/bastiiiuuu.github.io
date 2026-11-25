@@ -73,7 +73,7 @@
     "slug": "misreinas",
     "title": "Mis Reinas",
     "category": "Desarrollo web y backend",
-    "status": "Proyecto académico",
+    "status": "Sitio público publicado",
     "summary": "Un catálogo relacionado, desde el modelo de datos hasta una API de consulta.",
     "tech": [
       "Python",
@@ -81,18 +81,22 @@
       "SQLite",
       "JavaScript"
     ],
-    "cover": "misreinas-catalogo.webp",
+    "cover": "misreinas-publica-catalogo.webp",
     "flow": [
       "Navegador y explorador",
       "Django / API / Admin",
       "ORM y SQLite"
     ],
     "code": "https://github.com/bastiiiuuu/Misreinas",
-    "demo": null,
+    "demo": "https://bastiiiuuu.github.io/Misreinas/",
     "sections": [
       {
+        "title": "El sitio publicado",
+        "html": "<p>Mis Reinas está disponible en GitHub Pages con Inicio, Nosotros, catálogo, sucursales y contacto. Los filtros por categoría y local, junto con la paginación, funcionan mediante páginas HTML generadas desde Django. Se publica el catálogo del proyecto original: diez productos, tres sucursales y seis categorías.</p><p>El repositorio conserva el backend Django, su API y el Admin para ejecución en un entorno Python. Esa parte no se ejecuta en GitHub Pages. En la web publicada, el contacto utiliza los canales disponibles y no simula un envío de formularios.</p>"
+      },
+      {
         "title": "Contexto y responsabilidades",
-        "html": "<p>La versión más completa del proyecto académico se encontraba en el equipo local. La evolución documentada integró ese catálogo con su repositorio y añadió una API de lectura y una demostración reproducible. El caso reúne modelos, vistas, plantillas y JavaScript para explicar cómo una misma fuente de datos puede servir a una página renderizada y a un consumidor JSON. La mejora técnica se realizó con asistencia de IA.</p>"
+        "html": "<p>La versión más completa del proyecto académico se encontraba en el equipo local. La evolución documentada integró ese catálogo con su repositorio y añadió una API de lectura y una publicación reproducible. El caso reúne modelos, vistas, plantillas y JavaScript para explicar cómo una misma fuente de datos puede servir a una página renderizada y a un consumidor JSON. La mejora técnica se realizó con asistencia de IA.</p>"
       },
       {
         "title": "Modelo de datos y contrato público",
@@ -107,27 +111,28 @@
         "html": "<p>La API pública permite consultar con GET y HEAD; las modificaciones corresponden al Admin autenticado. La configuración separa claves y valores del entorno, exige una clave independiente para producción y activa controles HTTPS según el modo de despliegue. Las pruebas comprueban errores JSON, límites de página, escape de contenido y protección CSRF. Esto no sustituye una auditoría de un entorno de producción.</p>"
       },
       {
-        "title": "Instalación y demostración reproducible",
-        "html": "<p>El repositorio incluye requisitos fijados, migraciones y seed_demo. El comando crea registros ficticios identificados como DEMO y puede repetirse sin duplicarlos. Las capturas de este caso proceden de una base de demostración aislada, sin datos de usuarios. El backend se ejecuta localmente; GitHub Pages aloja este caso de estudio y el código se encuentra en el repositorio enlazado.</p>"
+        "title": "Publicación reproducible",
+        "html": "<p>El exportador crea una base temporal en memoria usando únicamente los campos públicos del catálogo. Renderiza las plantillas Django, genera los filtros y la paginación y copia las imágenes utilizadas. La publicación contiene 37 páginas estáticas. GitHub Actions comprueba sus enlaces y publica los archivos resultantes, sin usuarios, sesiones o bases de datos.</p>"
       }
     ],
     "gallery": [
       {
-        "file": "misreinas-catalogo.webp",
-        "title": "Catálogo renderizado por Django",
-        "caption": "Ofertas ficticias identificadas como DEMO."
+        "file": "misreinas-publica-inicio.webp",
+        "title": "Inicio de Mis Reinas",
+        "caption": "Presentación pública del sitio y acceso a sus sucursales."
       },
       {
-        "file": "misreinas-api.webp",
-        "title": "Explorador de la API",
-        "caption": "Lectura del mismo catálogo desde JavaScript."
+        "file": "misreinas-publica-catalogo.webp",
+        "title": "Catálogo de productos",
+        "caption": "Productos del proyecto original, con categorías y sucursales."
       },
       {
-        "file": "misreinas-json.webp",
-        "title": "Filtro y respuesta JSON",
-        "caption": "Una consulta específica y su contrato de respuesta."
+        "file": "misreinas-publica-contacto.webp",
+        "title": "Canales de contacto",
+        "caption": "Acceso a los canales publicados del comercio."
       }
-    ]
+    ],
+    "demo_label": "Visitar Mis Reinas"
   },
   {
     "slug": "deskisiao",
