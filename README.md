@@ -1,26 +1,32 @@
 # Portafolio de desarrollo de software
 
-Sitio estático con proyectos, tecnologías aplicadas, formación, enlace a GitHub y currículum imprimible. Estética negra y morada, diseño adaptable y movimiento reducido según la preferencia del dispositivo.
+Sitio estático publicado en GitHub Pages. Identidad editorial carbón, grafito, blanco cálido y azul acero. Portada, perfil, tecnologías, trayectoria, metodología y ocho casos de estudio. Web de Deskisiao y servidor FiveM son proyectos separados.
 
-La identidad pública utiliza una presentación sin nombre personal. La formación declarada corresponde a Ingeniería en Ciberseguridad en INACAP, con salida intermedia de Analista Programador en curso. El atlas y las mejoras del portafolio reconocen el apoyo de IA. No hay experiencia laboral, certificaciones o nivel de inglés inventados.
-
-## Ejecutar
+## Ejecutar y comprobar
 
 ```sh
-python -m http.server 8080
-```
-
-Abre http://127.0.0.1:8080/. No requiere npm ni un proceso de compilación de frontend.
-
-## Verificar y publicar
-
-```sh
+python tools/build_pages.py
 python tools/check_site.py
 python tools/build_site.py
+python -m http.server 8087
 ```
 
-El workflow publica únicamente el contenido empaquetado en _site. GitHub Pages debe usar GitHub Actions como origen. Para Cloudflare Pages puede usarse el comando `python tools/build_site.py` y la carpeta de salida `_site`. El archivo _headers contiene opciones para un alojamiento Cloudflare; GitHub Pages no aplica ese archivo.
+No requiere Node, paquetes de frontend ni fuentes externas. `content/projects.json` es la fuente editorial; `tools/build_pages.py` genera portada, casos, sitemap y robots. `content/images.json` conserva dimensiones intrínsecas. Los archivos HTML generados se versionan para que la entrega pueda recorrerse sin compilación. La hoja `styles.css` y `app.js` comparten componentes entre páginas.
 
-La consulta de actividad en GitHub se realiza bajo demanda sobre repositorios públicos, sin tokens. Un límite o fallo de la API no impide abrir los proyectos. El sitio no incluye analítica ni formularios que almacenen datos. Las tipografías se solicitan a Google Fonts y existe una alternativa del sistema si no están disponibles.
+## Publicación
 
-El currículum se puede imprimir o guardar en PDF desde la página correspondiente. No se publica un correo ni un LinkedIn sin confirmar esos canales.
+GitHub Actions valida y empaqueta el contenido público en `_site`. El origen de Pages debe ser GitHub Actions. En Cloudflare Pages, ejecutar `python tools/build_site.py` con salida `_site`. `_headers` solo se aplica en Cloudflare; GitHub Pages administra sus propias cabeceras.
+
+## Interacciones
+
+El menú informa su estado mediante `aria-expanded`. La navegación activa no modifica el historial. Las galerías utilizan un diálogo nativo: teclado, Escape y retorno de foco; sin JavaScript, el enlace abre la imagen original. Se respetan las preferencias de movimiento reducido. La consulta opcional a GitHub lee repositorios públicos sin tokens. Los errores de red no bloquean la navegación.
+
+## Contenido y privacidad
+
+No se publica nombre personal, correo ni LinkedIn sin confirmación. La formación corresponde a Ingeniería en Ciberseguridad en INACAP y a la salida intermedia de Analista Programador en curso. Los proyectos distinguen prototipos, demos y planes; no se inventan experiencia laboral, estadísticas o certificaciones. Los casos identifican el apoyo de IA y los recursos de terceros.
+
+Las capturas de Mis Reinas y SEFEL utilizan bases aisladas con datos ficticios. Las de Deskisiao proceden de la web pública. Las imágenes se presentan en escala de grises mediante CSS para mantener la identidad; el proyecto original conserva sus colores. Los esquemas de arquitectura se identifican como diagramas, no como capturas. No se incluyen bases, credenciales, configuraciones privadas ni paquetes comerciales.
+
+## Verificación
+
+El comprobador revisa enlaces internos y fragmentos, títulos, idioma, metadatos, dimensiones de imágenes y ausencia de tonalidades moradas en la identidad. La revisión visual se realiza con navegador a distintos anchos. Lighthouse es una medición de laboratorio: sus puntuaciones no sustituyen datos reales de usuarios ni acreditan por sí solas conformidad WCAG completa.

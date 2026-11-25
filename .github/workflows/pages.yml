@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
+      - run: python tools/build_pages.py
       - run: python tools/check_site.py
       - run: python tools/build_site.py
       - uses: actions/upload-pages-artifact@v4

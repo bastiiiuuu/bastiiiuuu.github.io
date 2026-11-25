@@ -1,0 +1,417 @@
+[
+  {
+    "slug": "sefel",
+    "title": "SEFEL",
+    "category": "Software de escritorio",
+    "status": "Prototipo académico",
+    "summary": "Recursos, costos y presupuestos en una aplicación de escritorio.",
+    "tech": [
+      "Python",
+      "CustomTkinter",
+      "SQLite",
+      "ReportLab"
+    ],
+    "cover": "sefel-inicio.webp",
+    "flow": [
+      "Recursos y APU",
+      "Partidas y presupuestos",
+      "Documentos emitidos"
+    ],
+    "code": null,
+    "demo": null,
+    "sections": [
+      {
+        "title": "Contexto y objetivos",
+        "html": "<p>El proyecto integrado aborda una dificultad de la gestión de presupuestos: que los recursos, la composición de costos y el documento final mantengan una relación clara. Una partida reúne materiales, equipos y mano de obra; el presupuesto utiliza esas partidas para expresar cantidades e importes. El prototipo permite estudiar ese recorrido completo dentro de una aplicación de escritorio.</p>"
+      },
+      {
+        "title": "Arquitectura y separación de responsabilidades",
+        "html": "<p>La interfaz se implementa con CustomTkinter. El núcleo de dominio organiza operaciones, validaciones y persistencia; un módulo de documentos produce los reportes con ReportLab. SQLite permite ejecutar el prototipo localmente. Existen adaptadores y componentes para una API FastAPI y almacenamiento central, cuyo despliegue multiequipo requiere una comprobación específica.</p>"
+      },
+      {
+        "title": "El desafío: conservar lo que se emitió",
+        "html": "<p>Un documento comercial emitido debe conservar sus importes aunque después cambie el catálogo. Por eso la lógica distingue los datos actuales del recurso de la información utilizada al emitir un presupuesto. El trabajo con Decimal evita depender de aproximaciones binarias para los cálculos monetarios. La regla del proyecto no agrega automáticamente un recargo del 20 %.</p>"
+      },
+      {
+        "title": "Seguimiento interno y permisos",
+        "html": "<p>El control por proyecto relaciona un presupuesto destinado con costos reales y saldo. Un saldo negativo expresa sobrecosto; no se presenta como un cálculo de rentabilidad. La implementación contiene roles y registro de acciones. La interfaz, la emisión y el seguimiento interno cumplen responsabilidades diferentes: el seguimiento no reescribe el PDF que ya se entregó.</p>"
+      },
+      {
+        "title": "Participación, evolución y evidencia",
+        "html": "<p>Se presenta como proyecto académico integrado desarrollado con apoyo de IA. La contribución individual todavía requiere un desglose acordado con el equipo. La evidencia revisada incluye código, versiones ejecutables, pruebas de dominio y documentos de demostración. No se atribuye una operación empresarial real a partir de estas entregas. La galería incluye cuatro capturas reales de la aplicación sobre una base aislada con datos ficticios y un documento generado. El recorrido visual comprueba la apertura y navegación de esas vistas; no reemplaza una validación completa del flujo de emisión o de un despliegue central.</p>"
+      }
+    ],
+    "gallery": [
+      {
+        "file": "sefel-inicio.webp",
+        "title": "Inicio del prototipo",
+        "caption": "Resumen de recursos, partidas y presupuestos sobre una base aislada de datos ficticios."
+      },
+      {
+        "file": "sefel-recursos.webp",
+        "title": "Recursos y categorías",
+        "caption": "Catálogo de materiales, equipos y mano de obra con registros DEMO."
+      },
+      {
+        "file": "sefel-partidas.webp",
+        "title": "Partidas de trabajo",
+        "caption": "Descripción, unidad y costo de partidas de demostración."
+      },
+      {
+        "file": "sefel-apu.webp",
+        "title": "Análisis de precios unitarios",
+        "caption": "Composición de una partida con consumo y costo parcial de recursos."
+      },
+      {
+        "file": "sefel-documento.webp",
+        "title": "Documento generado",
+        "caption": "Presupuesto de demostración emitido por el prototipo."
+      }
+    ]
+  },
+  {
+    "slug": "misreinas",
+    "title": "Mis Reinas",
+    "category": "Desarrollo web y backend",
+    "status": "Proyecto académico",
+    "summary": "Un catálogo relacionado, desde el modelo de datos hasta una API de consulta.",
+    "tech": [
+      "Python",
+      "Django",
+      "SQLite",
+      "JavaScript"
+    ],
+    "cover": "misreinas-catalogo.webp",
+    "flow": [
+      "Navegador y explorador",
+      "Django / API / Admin",
+      "ORM y SQLite"
+    ],
+    "code": "https://github.com/bastiiiuuu/Misreinas",
+    "demo": null,
+    "sections": [
+      {
+        "title": "Contexto y responsabilidades",
+        "html": "<p>La versión más completa del proyecto académico se encontraba en el equipo local. La evolución documentada integró ese catálogo con su repositorio y añadió una API de lectura y una demostración reproducible. El caso reúne modelos, vistas, plantillas y JavaScript para explicar cómo una misma fuente de datos puede servir a una página renderizada y a un consumidor JSON. La mejora técnica se realizó con asistencia de IA.</p>"
+      },
+      {
+        "title": "Modelo de datos y contrato público",
+        "html": "<p>Una oferta pertenece a una sucursal y puede tener varias categorías. La API devuelve esas relaciones junto a los datos de la oferta. El precio se transmite como texto decimal; null representa un importe desconocido y no equivale a cero. La respuesta de listado incluye cantidad, página, número de páginas y enlaces de navegación. Los filtros se aplican antes de dividir los resultados.</p>"
+      },
+      {
+        "title": "Interfaz y recuperación ante fallos",
+        "html": "<p>El explorador consulta la API mediante fetch y distingue carga, resultados, lista vacía y error. La paginación permite navegar sin conocer la estructura interna de Django. Al cambiar la consulta se cancela la anterior para evitar que una respuesta antigua reemplace los resultados recientes. El contenido se incorpora con textContent para mostrar los datos como texto.</p>"
+      },
+      {
+        "title": "Seguridad y administración",
+        "html": "<p>La API pública permite consultar con GET y HEAD; las modificaciones corresponden al Admin autenticado. La configuración separa claves y valores del entorno, exige una clave independiente para producción y activa controles HTTPS según el modo de despliegue. Las pruebas comprueban errores JSON, límites de página, escape de contenido y protección CSRF. Esto no sustituye una auditoría de un entorno de producción.</p>"
+      },
+      {
+        "title": "Instalación y demostración reproducible",
+        "html": "<p>El repositorio incluye requisitos fijados, migraciones y seed_demo. El comando crea registros ficticios identificados como DEMO y puede repetirse sin duplicarlos. Las capturas de este caso proceden de una base de demostración aislada, sin datos de usuarios. El backend se ejecuta localmente; GitHub Pages aloja este caso de estudio y el código se encuentra en el repositorio enlazado.</p>"
+      }
+    ],
+    "gallery": [
+      {
+        "file": "misreinas-catalogo.webp",
+        "title": "Catálogo renderizado por Django",
+        "caption": "Ofertas ficticias identificadas como DEMO."
+      },
+      {
+        "file": "misreinas-api.webp",
+        "title": "Explorador de la API",
+        "caption": "Lectura del mismo catálogo desde JavaScript."
+      },
+      {
+        "file": "misreinas-json.webp",
+        "title": "Filtro y respuesta JSON",
+        "caption": "Una consulta específica y su contrato de respuesta."
+      }
+    ]
+  },
+  {
+    "slug": "deskisiao",
+    "title": "Deskisiao · Web",
+    "category": "Diseño y desarrollo web",
+    "status": "Web publicada",
+    "summary": "Una identidad digital y una normativa que se puede explorar.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Cloudflare Pages"
+    ],
+    "cover": "deskisiao-inicio.webp",
+    "flow": [
+      "Navegación y búsqueda",
+      "JSON de normativa",
+      "Cloudflare Pages"
+    ],
+    "code": null,
+    "demo": "https://deskisiao.pages.dev/",
+    "sections": [
+      {
+        "title": "Contexto y objetivo",
+        "html": "<p>La web funciona como entrada pública a una comunidad de roleplay: presenta su identidad, explica cómo acceder y concentra las reglas. El problema de navegación consiste en orientar a visitantes nuevos y facilitar la consulta de un documento extenso. Esta entrega se evalúa como sitio web independiente del servidor FiveM.</p>"
+      },
+      {
+        "title": "Participación y organización técnica",
+        "html": "<p>Es un proyecto propio de comunidad. El sitio utiliza HTML semántico, una hoja CSS y JavaScript del navegador. El índice de normativa se encuentra en JSON y los enlaces se agrupan en la configuración pública. La presentación y la documentación del portafolio cuentan con asistencia de IA. Los recursos gráficos conservan su contexto y atribución.</p>"
+      },
+      {
+        "title": "Búsqueda sin interpretar entradas como HTML",
+        "html": "<p>La consulta filtra los bloques de normativa y resalta coincidencias con nodos de texto y elementos mark. La interacción no necesita convertir el texto escrito por el visitante en HTML. El documento original permanece disponible cuando el lector prefiere descargarlo o cuando la carga del índice falla.</p>"
+      },
+      {
+        "title": "Diseño e interacción adaptable",
+        "html": "<p>La navegación enlaza la presentación, el acceso, la normativa y la comunidad. El menú móvil comunica su estado mediante aria-expanded. Los capítulos permiten revisar partes concretas del documento; la búsqueda facilita localizar conceptos. La preferencia de movimiento reducido evita que la animación sea necesaria para acceder al contenido.</p>"
+      },
+      {
+        "title": "Publicación y límites del resultado",
+        "html": "<p>Cloudflare Pages entrega los archivos estáticos. La web no implementa una base de datos de jugadores ni un panel de administración del servidor. La publicación y el buscador son verificables desde el enlace oficial. No se infieren estadísticas de uso, conversiones, disponibilidad del juego ni resultados de rendimiento a partir de esa publicación.</p>"
+      },
+      {
+        "title": "Galería y recorrido sugerido",
+        "html": "<p>Las capturas nuevas muestran el inicio, el índice de normativa, una búsqueda y el inicio móvil. Puede recorrerse primero la página pública, buscar un concepto y abrir un capítulo. Las imágenes se presentan en escala de grises dentro del portafolio para mantener su identidad editorial; el sitio original conserva su diseño propio.</p>"
+      }
+    ],
+    "gallery": [
+      {
+        "file": "deskisiao-inicio.webp",
+        "title": "Portada pública",
+        "caption": "Identidad y accesos principales de la web."
+      },
+      {
+        "file": "deskisiao-normativa.webp",
+        "title": "Normativa por capítulos",
+        "caption": "Consulta del documento oficial desde la página."
+      },
+      {
+        "file": "deskisiao-busqueda.webp",
+        "title": "Búsqueda de conceptos",
+        "caption": "Interfaz de búsqueda sobre el contenido público."
+      },
+      {
+        "file": "deskisiao-movil.webp",
+        "title": "Inicio en móvil",
+        "caption": "Captura real a 390 píxeles de ancho."
+      }
+    ]
+  },
+  {
+    "slug": "deskisiao-servidor",
+    "title": "Deskisiao · Servidor",
+    "category": "Lua e infraestructura",
+    "status": "Proyecto personal",
+    "summary": "Desarrollo, integración y mantenimiento de un servidor FiveM.",
+    "tech": [
+      "Lua",
+      "QBCore",
+      "Ox",
+      "MySQL / MariaDB"
+    ],
+    "cover": "server-architecture.svg",
+    "flow": [
+      "Cliente / NUI",
+      "Servidor Lua / QBCore",
+      "Ox / Persistencia SQL"
+    ],
+    "code": null,
+    "demo": null,
+    "sections": [
+      {
+        "title": "Contexto y participación",
+        "html": "<p>El servidor es un proyecto personal de comunidad que requiere desarrollo, integración y operación. El trabajo comprende scripts Lua, configuración, adaptaciones y diagnóstico de recursos. Se distingue la contribución propia y asistida de los frameworks y paquetes de terceros: QBCore y el ecosistema Ox conservan sus respectivas autorías.</p>"
+      },
+      {
+        "title": "Arquitectura y límites de confianza",
+        "html": "<p>El cliente ejecuta interacción y presentación; NUI aporta interfaces web dentro del juego. Los eventos y callbacks comunican esas entradas al servidor. QBCore ofrece el contexto del jugador y los recursos Ox participan en inventario, utilidades, objetivos y persistencia. El servidor debe comprobar identidad, permisos y datos antes de operar sobre dinero, inventario o registros.</p>"
+      },
+      {
+        "title": "Ejemplo: apariencia y ciclo de vida del jugador",
+        "html": "<p>Las intervenciones documentadas incluyen un menú de apariencia dirigido a un jugador con validación en el servidor y protecciones ante identidades ausentes en operaciones de conjuntos. El estado del jugador puede dejar de estar disponible durante carga o desconexión; validar esa condición antes de acceder a caché o base de datos evita convertir una ausencia esperable en un error de ejecución.</p>"
+      },
+      {
+        "title": "Ejemplo: seguimiento de desconexiones",
+        "html": "<p>Se revisó un recurso que obtenía repetidamente un objeto completo del framework. La intervención documentada mantuvo la captura de coordenadas y trasladó parte de la actualización del estado a eventos del ciclo de vida. La comparación se hizo sobre perfiles y escenarios concretos. No permite prometer más FPS a todos los jugadores ni declarar resuelta una fuga de memoria.</p>"
+      },
+      {
+        "title": "Integración, persistencia y despliegue",
+        "html": "<p>El mantenimiento incluye compatibilidad de dependencias y adaptadores de persistencia. Para cambios de esquema se preparan migraciones aditivas, respaldos y comparaciones antes de la aplicación. Los archivos se contrastan mediante hashes y se acota el conjunto de recursos afectados. Los ejemplos del portafolio resumen evidencias históricas sin publicar configuraciones de acceso o bases de jugadores.</p>"
+      },
+      {
+        "title": "Validación y estado actual",
+        "html": "<p>Las evidencias disponibles incluyen comprobaciones de sintaxis Lua, escenarios aislados, perfiles y registros de despliegue. Una prueba de sintaxis acredita que el archivo se puede analizar; no acredita por sí sola la experiencia multijugador. La revisión del portafolio no se conecta a producción ni afirma disponibilidad actual. No hay capturas de juego recientes verificadas para publicar en esta galería.</p>"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "agenda-android",
+    "title": "Veterinaria Android",
+    "category": "Desarrollo móvil",
+    "status": "Certamen académico",
+    "summary": "Formularios, navegación y reglas de cobro con Kotlin.",
+    "tech": [
+      "Kotlin",
+      "Android",
+      "XML"
+    ],
+    "cover": "mobile-architecture.svg",
+    "flow": [
+      "Login de demostración",
+      "Formulario y servicios",
+      "Validación y resumen"
+    ],
+    "code": null,
+    "demo": null,
+    "sections": [
+      {
+        "title": "Contexto y participación",
+        "html": "<p>Este proyecto corresponde a un certamen de desarrollo móvil. El caso se documenta a partir de su código Kotlin y recursos XML, bajo el nombre descriptivo Veterinaria Android. Su objetivo es practicar navegación, captura de datos y reglas de cálculo. Las mejoras documentales se realizaron con asistencia de IA.</p>"
+      },
+      {
+        "title": "Diseño de la solución",
+        "html": "<p>LoginActivity inicia el flujo y abre MainActivity mediante un Intent. Los diseños XML organizan los controles y los recursos de Android reúnen textos y opciones. El formulario recoge datos del tutor, mascota, especie y atención; los servicios adicionales modifican el resumen calculado. El diagrama representa ese flujo de código y no una captura de un teléfono.</p>"
+      },
+      {
+        "title": "Desafío de cálculo y validación",
+        "html": "<p>La validación exige campos obligatorios, teléfono de nueve dígitos y edad de mascota entre 0 y 30. El cálculo combina atención base, recargos por determinadas especies y adicionales. Desde tres adicionales aplica un descuento del 10 % sobre el subtotal. Separar estas reglas de la Activity es una mejora identificada para hacer verificables sus límites con pruebas unitarias.</p>"
+      },
+      {
+        "title": "Seguridad, verificación y evolución",
+        "html": "<p>El acceso contiene credenciales didácticas locales; no equivale a un servicio de autenticación seguro. La revisión previa produjo un APK de depuración y un informe Lint sin errores, con nueve advertencias. La tarea de pruebas unitarias indicó ausencia de casos. La ejecución en teléfono, la persistencia de reservas y la integración con backend no se presentan como funciones demostradas.</p>"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "tareas",
+    "title": "Gestor de tareas",
+    "category": "Desarrollo frontend",
+    "status": "Demo disponible",
+    "summary": "Estado y persistencia local, con recuperación ante datos inválidos.",
+    "tech": [
+      "React",
+      "JavaScript",
+      "localStorage",
+      "node:test"
+    ],
+    "cover": "tareas-demo.webp",
+    "flow": [
+      "Componentes React",
+      "Estado y validación",
+      "localStorage"
+    ],
+    "code": "https://github.com/bastiiiuuu/Certamen-4",
+    "demo": "https://bastiiiuuu.github.io/Certamen-4/",
+    "sections": [
+      {
+        "title": "Contexto y objetivo",
+        "html": "<p>Un ejercicio de React sirve para estudiar un flujo completo de creación, edición, búsqueda y eliminación. El reto es que la persistencia del navegador falle de manera comprensible y que el estado de edición siga siendo coherente con la lista. La demo no necesita cuentas ni un backend.</p>"
+      },
+      {
+        "title": "Decisiones de estado y persistencia",
+        "html": "<p>La lista se guarda como JSON en localStorage. Al recuperarla se comprueba tanto el análisis del JSON como su estructura. El almacenamiento puede estar bloqueado o sin espacio; el código comunica esa condición y permite continuar usando la interfaz. Al borrar una tarea que estaba en edición se abandona esa edición para no mantener una referencia inválida.</p>"
+      },
+      {
+        "title": "Pruebas y experiencia de uso",
+        "html": "<p>Los controles de completar utilizan un checkbox nativo. Las pruebas verifican listas válidas, datos incompatibles y errores de almacenamiento. La integración continua ejecuta lint, pruebas y compilación antes de publicar la demo. La captura incluye una tarea ficticia creada solo para mostrar la interfaz.</p>"
+      },
+      {
+        "title": "Alcance y siguientes mejoras",
+        "html": "<p>La persistencia pertenece al navegador y origen actuales: no existe sincronización entre dispositivos. El repositorio conserva las instrucciones de instalación. Las mejoras de recuperación y documentación se realizaron con ayuda de IA. Una evolución con cuentas requeriría definir backend, permisos y estrategia de sincronización como un alcance nuevo.</p>"
+      }
+    ],
+    "gallery": [
+      {
+        "file": "tareas-demo.webp",
+        "title": "Una tarea de demostración",
+        "caption": "Estado de la interfaz React con un registro ficticio."
+      }
+    ]
+  },
+  {
+    "slug": "atlas",
+    "title": "Atlas de anatomía",
+    "category": "Visualización interactiva",
+    "status": "Con asistencia de IA",
+    "summary": "Exploración anatómica 3D y una edición estática para el navegador.",
+    "tech": [
+      "Three.js",
+      "JavaScript",
+      "Python",
+      "FastAPI local"
+    ],
+    "cover": "atlas-architecture.svg",
+    "flow": [
+      "Interfaz y Three.js",
+      "GLB y catálogos estáticos",
+      "Exportador Python / API local"
+    ],
+    "code": "https://github.com/bastiiiuuu/anatomia-mvp",
+    "demo": "https://bastiiiuuu.github.io/anatomia-mvp/",
+    "sections": [
+      {
+        "title": "Contexto y participación",
+        "html": "<p>El proyecto explora la interacción con modelos anatómicos tridimensionales y se construyó con ayuda de IA. Su valor dentro del portafolio está en estudiar el flujo de datos, la separación entre catálogo y geometría y los contratos de búsqueda. La atribución de los modelos de terceros forma parte de la entrega.</p>"
+      },
+      {
+        "title": "Dos formas de ejecutar el proyecto",
+        "html": "<p>La edición pública es estática: un exportador Python prepara catálogos e índice y el navegador carga modelos GLB con Three.js. La edición local incorpora FastAPI. El visor puede consultar Wikipedia para enriquecer fichas. Los workers ayudan a trasladar parte de la preparación geométrica fuera del hilo de interfaz, sin garantizar por ello una velocidad uniforme.</p>"
+      },
+      {
+        "title": "Desafío: coherencia entre entorno local y publicación",
+        "html": "<p>Una comprobación del exportador detectó diferencias de saltos de línea entre Windows y Linux. La exportación se normalizó a LF y se incorporó una prueba para ese contrato. Es un ejemplo de cómo un detalle de entorno puede afectar archivos generados y validaciones aunque el contenido parezca equivalente.</p>"
+      },
+      {
+        "title": "Pruebas, fuentes y límites",
+        "html": "<p>La verificación documentada incluye 27 pruebas Python y comprobaciones de resolución e identidad de etiquetas. El proyecto conserva enlaces a licencias de los modelos. No se afirma precisión clínica ni rendimiento universal. Las técnicas avanzadas presentes en el código se explican como parte de un proyecto asistido, no como una atribución automática de dominio individual.</p>"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "smartattendance",
+    "title": "SmartAttendance 360",
+    "category": "IoT y sistemas conectados",
+    "status": "En desarrollo",
+    "summary": "Un dispositivo físico y una arquitectura central para asistencia laboral.",
+    "tech": [
+      "Arduino UNO R4 WiFi",
+      "RFID",
+      "Trabajo en equipo"
+    ],
+    "cover": "iot-architecture.svg",
+    "flow": [
+      "Arduino / web / móvil",
+      "API central prevista",
+      "PostgreSQL previsto"
+    ],
+    "code": null,
+    "demo": null,
+    "sections": [
+      {
+        "title": "Problema y objetivos previstos",
+        "html": "<p>El proyecto propone conectar el registro físico de asistencia con la consulta laboral y la gestión administrativa. Se busca reducir la transcripción manual y dar acceso al historial desde una plataforma común. El diseño incluye un modo de emergencia complementario a los protocolos oficiales, basado en registros y confirmaciones de zona segura.</p>"
+      },
+      {
+        "title": "Responsabilidad compartida",
+        "html": "<p>El trabajo se realiza en equipo con participación compartida en hardware, web, backend y móvil. El mecanismo físico está preparado según lo informado por su autor. La integración completa no está demostrada en este portafolio. Los endpoints, modelos y estados de respuesta deben acordarse entre los integrantes antes de ampliar las pantallas.</p>"
+      },
+      {
+        "title": "Arquitectura central prevista",
+        "html": "<p>Arduino enviará la lectura al backend; el backend validará identidad del dispositivo y reglas del registro. Web y app consultarán la misma API. Solo el backend accederá a PostgreSQL. La app podrá utilizar datos simulados durante el desarrollo de los servicios, conservando una capa de integración preparada para respuestas reales.</p>"
+      },
+      {
+        "title": "Riesgos técnicos que el diseño debe resolver",
+        "html": "<p>El reintento de un registro tras una caída de conexión puede generar duplicados, por lo que se debe definir una identidad del evento y su tratamiento idempotente. El UID RFID no debe tratarse por sí solo como prueba fuerte de identidad. El modo emergencia estimará presencia a partir del historial y no reemplazará los procedimientos de evacuación. Estas son consideraciones de diseño pendientes de validación, no controles implementados.</p>"
+      },
+      {
+        "title": "Evolución verificable",
+        "html": "<p>El primer recorrido de extremo a extremo será una lectura física reflejada en API, web y móvil. Después corresponderá probar desconexión, reenvío, permisos y eventos duplicados. Flutter, Dart, React, Node.js, Express, JWT, WebSockets y Firebase Cloud Messaging siguen siendo el stack propuesto y no una lista de entregas finalizadas.</p>"
+      }
+    ],
+    "gallery": []
+  }
+]
