@@ -177,7 +177,7 @@
       },
       {
         "title": "Galería y recorrido sugerido",
-        "html": "<p>Las capturas nuevas muestran el inicio, el índice de normativa, una búsqueda y el inicio móvil. Puede recorrerse primero la página pública, buscar un concepto y abrir un capítulo. Las imágenes se presentan en escala de grises dentro del portafolio para mantener su identidad editorial; el sitio original conserva su diseño propio.</p>"
+        "html": "<p>Las capturas nuevas muestran el inicio, el índice de normativa, una búsqueda y el inicio móvil. Puede recorrerse primero la página pública, buscar un concepto y abrir un capítulo. Las capturas conservan los colores originales de cada interfaz. Los enlaces oficiales permiten recorrer el proyecto publicado.</p>"
       }
     ],
     "gallery": [

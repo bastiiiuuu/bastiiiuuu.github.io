@@ -1,6 +1,6 @@
 # Portafolio de desarrollo de software
 
-Sitio estático publicado en GitHub Pages. Identidad editorial carbón, grafito, blanco cálido y azul acero. Portada, perfil, tecnologías, trayectoria, metodología y ocho casos de estudio. Web de Deskisiao y servidor FiveM son proyectos separados.
+Sitio estático publicado en GitHub Pages. Identidad editorial carbón, grafito, blanco cálido y acentos verde lima. Portada, perfil, tecnologías, trayectoria, metodología y ocho casos de estudio. Web de Deskisiao y servidor FiveM son proyectos separados.
 
 ## Ejecutar y comprobar
 
@@ -25,7 +25,7 @@ El menú informa su estado mediante `aria-expanded`. La navegación activa no mo
 
 No se publica nombre personal, correo ni LinkedIn sin confirmación. La formación corresponde a Ingeniería en Ciberseguridad en INACAP y a la salida intermedia de Analista Programador en curso. Los proyectos distinguen prototipos, demos y planes; no se inventan experiencia laboral, estadísticas o certificaciones. Los casos identifican el apoyo de IA y los recursos de terceros.
 
-Las capturas de Mis Reinas y SEFEL utilizan bases aisladas con datos ficticios. Las de Deskisiao proceden de la web pública. Las imágenes se presentan en escala de grises mediante CSS para mantener la identidad; el proyecto original conserva sus colores. Los esquemas de arquitectura se identifican como diagramas, no como capturas. No se incluyen bases, credenciales, configuraciones privadas ni paquetes comerciales.
+Las capturas de Mis Reinas y SEFEL utilizan bases aisladas con datos ficticios. Las de Deskisiao proceden de la web pública. Las capturas y el visor ampliado conservan los colores originales de los proyectos. Las entradas al desplazarse y los estados hover respetan la preferencia de movimiento reducido. Los esquemas de arquitectura se identifican como diagramas, no como capturas. No se incluyen bases, credenciales, configuraciones privadas ni paquetes comerciales.
 
 ## Verificación
 

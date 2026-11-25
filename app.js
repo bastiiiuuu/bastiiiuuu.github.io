@@ -89,3 +89,32 @@ sync?.addEventListener('click', async () => {
     sync.disabled = false;
   }
 });
+
+/**
+ * Las entradas se animan al llegar al área visible, sin ocultar contenido en CSS.
+ * Si JavaScript falla o se prefiere menos movimiento, las páginas siguen visibles.
+ */
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !motionPreference.matches) {
+  const activeAnimations = new Set();
+  const entranceObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entranceObserver.unobserve(entry.target);
+      if (motionPreference.matches || typeof entry.target.animate !== 'function') continue;
+      const animation = entry.target.animate([
+        { opacity: 0.2, transform: 'translateY(16px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 520, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      activeAnimations.add(animation);
+      animation.finished.then(() => activeAnimations.delete(animation), () => activeAnimations.delete(animation));
+    }
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.project-feature,.project-row,.profile-copy,.technology-table>div,.timeline article,.method-grid article,.case-article section').forEach(element => entranceObserver.observe(element));
+  motionPreference.addEventListener('change', event => {
+    if (!event.matches) return;
+    entranceObserver.disconnect();
+    activeAnimations.forEach(animation => animation.cancel());
+    activeAnimations.clear();
+  });
+}
